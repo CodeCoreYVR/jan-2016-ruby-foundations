@@ -1,0 +1,15 @@
+def my_method
+  puts "Hello"
+  yield if block_given?
+  puts "Bye"
+end
+
+my_method
+
+my_method do
+  puts "Hey, What's up!"
+end
+
+my_method do
+  puts "heeeeeeey"
+end
