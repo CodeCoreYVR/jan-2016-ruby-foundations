@@ -1,0 +1,22 @@
+<h1>Welcome to My Awesome Application</h1>
+<p>Hello World</p>
+<!-- This is an HTML comment -->
+<%# This is an ERB comment %>
+<% name = "Tam" %>
+<%= 1 + 1 %>
+<h2>Hello <%= name %></h2>
+<% puts "Hey There" %> <%# this will display in Sinatra log and not the page %>
+<% a = 10 %>
+<% if a > 5 %>
+  <p>Large Number</p>
+<% else %>
+  <p>Small Number</p>
+<% end %>
+
+<% my_array = [1,2,3,4,5,6] %>
+
+<ul>
+  <% my_array.each do |x| %>
+    <li><%= x %></li>
+  <% end %>
+</ul>

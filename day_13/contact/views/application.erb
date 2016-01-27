@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+      body {
+        background-color: <%= session[:color] %>;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">Home</a> |
+    <a href="/special">Special</a> |
+    Hello <%= session[:name] %> |
+    You visited home page: <%= session[:count] %>
+    <form action="/" method="POST">
+      <input type="radio" name="background_color" value="red"> Red
+      <input type="radio" name="background_color" value="yellow"> Yellow
+      <input type="radio" name="background_color" value="blue"> Blue
+      <input type="submit" value="pick">
+    </form>
+
+    <form action="/remove_bg" method="POST">
+      <%# This is a workaround to mimic sending DELETE requests from a form
+          You must enable Rack method overrides (use Rack::MethodOverride) %>
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Clear BG">
+    </form>
+    <hr>
+    <%= yield %>
+  </body>
+</html>

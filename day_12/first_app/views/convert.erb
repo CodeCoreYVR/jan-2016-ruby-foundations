@@ -1,0 +1,15 @@
+<h1>Convert from C to F</h1>
+
+<form method="POST" action="/convert">
+  <%# to send data from a form to the server we must provide the `name`
+      attribute. In Sinatra this will be part of the `params` object. So
+      if the user enters 100 in the textbox below, our `params` will look
+      like: {"temp_in_c" => "100"}
+      %>
+  <input type="text" name="temp_in_c" id="temp-in-c" value="<%= @c %>">
+  <input type="submit" value="Convert">
+</form>
+
+<% if @f %>
+  <%= @f %> &deg;F
+<% end %>
